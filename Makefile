@@ -10,3 +10,16 @@ compile-deps:
 	pip-compile --verbose -o requirements/production.txt src/requirements/production.in
 	pip-compile --verbose -o requirements/development.txt src/requirements/production.in src/requirements/development.in
 	pip-compile --verbose -o requirements/test.txt src/requirements/production.in src/requirements/test.in
+
+build:
+	docker-compose build
+
+migrate: build
+	docker-compose run --rm api-development python src/manage.py migrate
+
+run: build migrate
+	docker-compose up
+
+
+test: build
+	docker-compose run --rm api-test /app/bin/wait-for-postgres.sh pytest --verbose

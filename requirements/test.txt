@@ -4,5 +4,24 @@
 #
 #    pip-compile --output-file requirements/test.txt src/requirements/production.in src/requirements/test.in
 #
+apipkg==1.4               # via execnet
+argh==0.26.2              # via watchdog
+colorama==0.3.9           # via pytest-watch
+coverage==4.4.1           # via pytest-cov, pytest-testmon
 django==1.11.4
+docopt==0.6.2             # via pytest-watch
+execnet==1.4.1            # via pytest-xdist
+pathtools==0.1.2          # via watchdog
+psycopg2==2.7
+py==1.4.34                # via pytest, pytest-xdist
+pytest-django==3.1.2
+pytest-sugar==0.8.0
+pytest-testmon==0.9.4
+pytest-watch==4.1.0
+pytest-xdist==1.16.0
+pytest==3.0.7
+pytest_cov==2.4.0
 pytz==2017.2
+pyyaml==3.12              # via watchdog
+termcolor==1.1.0          # via pytest-sugar
+watchdog==0.8.3           # via pytest-watch

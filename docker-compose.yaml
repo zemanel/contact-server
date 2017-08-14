@@ -1,0 +1,53 @@
+version: "2"
+services:
+
+  db:
+    image: postgres:9.6.1
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=contacts_api
+      - POSTGRES_USER=contacts_api
+      - POSTGRES_PASSWORD=contacts_api
+
+  api-base:
+    build:
+      context: .
+      dockerfile: ./etc/Dockerfile.base
+    image: contacts-api:base
+    command: /bin/true
+    volumes:
+      - .:/app
+
+  api-development:
+    build:
+      context: .
+      dockerfile: ./etc/Dockerfile.development
+    image: contacts-api:development
+    # command: python src/manage.py runserver 0.0.0.0:8000
+    command: ["/app/bin/wait-for-postgres.sh", "--", "python", "src/manage.py", "runserver", "0.0.0.0:8000"]
+    env_file:
+      - ./etc/env.development
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - api-base
+
+  api-test:
+    build:
+      context: .
+      dockerfile: ./etc/Dockerfile.test
+    image: contacts-api:test
+    # command: ptw -- --testmon
+    # command: ["/app/bin/wait-for-postgres.sh", "--", "ptw", "--", "--testmon"]
+    command: /bin/true
+    env_file:
+      - ./etc/env.test
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - api-base

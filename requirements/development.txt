@@ -5,4 +5,5 @@
 #    pip-compile --output-file requirements/development.txt src/requirements/production.in src/requirements/development.in
 #
 django==1.11.4
+psycopg2==2.7
 pytz==2017.2

@@ -1,0 +1,5 @@
+FROM contacts-api:base
+MAINTAINER José Moreira <zemanel@zemanel.eu>
+
+ADD requirements/development.txt /app/requirements/development.txt
+RUN pip install -r /app/requirements/development.txt
