@@ -111,3 +111,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CONTACTS_SPREADSHEET_URL = os.environ.get('CONTACTS_SPREADSHEET_URL')
+
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 100,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
