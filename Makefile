@@ -4,7 +4,7 @@ deps: sync-deps
 	@echo Updating dependencies
 
 sync-deps: compile-deps
-	pip-sync requirements/development.txt
+	pip-sync requirements/development.txt requirements/test.txt
 
 compile-deps:
 	pip-compile --verbose -o requirements/production.txt src/requirements/production.in
