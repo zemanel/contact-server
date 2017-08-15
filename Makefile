@@ -20,6 +20,8 @@ migrate: build
 run: build migrate
 	docker-compose up
 
-
 test: build
-	docker-compose run --rm api-test /app/bin/wait-for-postgres.sh pytest --verbose
+	docker-compose run --rm api-test pytest --verbose
+
+lint:
+	cd src && pre-commit run --all-files

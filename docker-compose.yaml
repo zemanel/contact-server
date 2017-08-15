@@ -41,13 +41,10 @@ services:
       context: .
       dockerfile: ./etc/Dockerfile.test
     image: contacts-api:test
-    # command: ptw -- --testmon
-    # command: ["/app/bin/wait-for-postgres.sh", "--", "ptw", "--", "--testmon"]
     command: /bin/true
     env_file:
       - ./etc/env.test
     volumes:
       - .:/app
     depends_on:
-      - db
       - api-base
