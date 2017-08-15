@@ -131,3 +131,36 @@ CACHES = {
         'LOCATION': os.environ.get('DJANGO_CACHE_LOCATION', '')
     }
 }
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/media/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        }
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG'
+    }
+}
