@@ -10,6 +10,11 @@ services:
       - POSTGRES_USER=contacts_api
       - POSTGRES_PASSWORD=contacts_api
 
+  memcached:
+    image: memcached:1.5.0
+    ports:
+      - "11211:11211"
+
   api-base:
     build:
       context: .
@@ -34,6 +39,7 @@ services:
       - "8000:8000"
     depends_on:
       - db
+      - memcached
       - api-base
 
   api-test:

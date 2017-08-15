@@ -4,3 +4,4 @@ pytz==2017.2
 psycopg2==2.7
 djangorestframework==3.6.3
 requests==2.18.4
+python-memcached==1.58
