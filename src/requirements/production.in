@@ -5,3 +5,5 @@ psycopg2==2.7
 djangorestframework==3.6.3
 requests==2.18.4
 python-memcached==1.58
+django-storages==1.6.5
+Pillow==4.2.1
