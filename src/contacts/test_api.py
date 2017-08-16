@@ -26,4 +26,9 @@ def test_should_list_contacts():
         url = reverse('contacts-list')
         r = api_client.get(url)
         assert r.status_code == status.HTTP_200_OK
-        assert r.json() == [{'a': '1', 'b': '2'}]
+        assert r.json() == {
+            'data': [
+                {'a': '1', 'b': '2'}
+            ],
+            'status': 200
+        }
