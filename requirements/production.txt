@@ -10,6 +10,7 @@ django-storages==1.6.5
 django==1.11.4
 djangorestframework==3.6.3
 idna==2.6                 # via requests
+markdown==2.6.8
 olefile==0.44             # via pillow
 pillow==4.2.1
 psycopg2==2.7

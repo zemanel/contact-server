@@ -12,6 +12,31 @@ log = logging.getLogger('contacts.views')
 
 
 class ListContacts(APIView):
+    """
+    get:
+    Return a list of contacts obtained from an external datasource.
+    Sample Response for valid response:
+
+            {
+                "data": [
+                    {
+                        "lastname": "Fox",
+                        "zip": "76541",
+                        "city": "Killeen",
+                        "street": "1859 Clair Street",
+                        "image": "/media/male3-512_DIUpMhe.png",
+                        "firstname": "Travis"
+                    },
+                "status": 200
+            }
+
+    If the `image_height` or `image_height` HTTP parameters are passed,
+    images will be resized and uploaded to media storage.
+
+    HTTP 200 Requests are cached by one second for performance reasons (in case of high
+    load, many requests will hit cache and also reduce outgoing server traffic.
+
+    """
     def get(self, request):
         try:
             form = ContactListParamsForm(request.GET)

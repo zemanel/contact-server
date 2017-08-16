@@ -13,6 +13,12 @@ class DatasourceError(Exception):
 
 
 class CSVDatasource:
+    """
+    Read data from CSV URL. If the `image_height` or `image_height` options are passed,
+    images will be resized and uploaded to media storage.
+    Currently using default django file storage but s3 storage is possible.
+    The goal is to serve resized images from a CDN.
+    """
     def __init__(self, url, opts):
         self.url = url
         self.opts = opts
