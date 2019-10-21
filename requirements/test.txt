@@ -11,7 +11,7 @@ chardet==3.0.4            # via requests
 colorama==0.3.9           # via pytest-watch
 coverage==4.4.1           # via pytest-cov, pytest-testmon
 django-storages==1.6.5
-django==1.11.4
+django==1.11.23
 djangorestframework==3.6.3
 docopt==0.6.2             # via pytest-watch
 execnet==1.4.1            # via pytest-xdist
