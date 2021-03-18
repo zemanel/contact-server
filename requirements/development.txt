@@ -30,7 +30,7 @@ nodeenv==1.2.0            # via pre-commit
 olefile==0.44             # via pillow
 pexpect==4.2.1            # via ipython
 pickleshare==0.7.4        # via ipython
-pillow==4.2.1
+pillow==8.1.1
 pip-tools==1.9.0
 pre-commit==0.16.3
 prompt-toolkit==1.0.15    # via ipython
