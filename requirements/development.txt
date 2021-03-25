@@ -42,7 +42,7 @@ pygments==2.2.0           # via ipython
 pylint==1.7.2
 python-memcached==1.58
 pytz==2017.2
-pyyaml==3.12              # via aspy.yaml, pre-commit
+pyyaml==5.4              # via aspy.yaml, pre-commit
 requests==2.18.4
 simplegeneric==0.8.1      # via ipython
 six==1.10.0               # via astroid, pip-tools, pre-commit, prompt-toolkit, pylint, python-memcached, traitlets
