@@ -31,7 +31,7 @@ pytest==3.0.7
 pytest_cov==2.4.0
 python-memcached==1.58
 pytz==2017.2
-pyyaml==3.12              # via watchdog
+pyyaml==5.4              # via watchdog
 requests-mock==1.3.0
 requests==2.18.4
 six==1.10.0               # via python-memcached, requests-mock
