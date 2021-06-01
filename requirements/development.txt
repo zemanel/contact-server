@@ -47,7 +47,7 @@ requests==2.18.4
 simplegeneric==0.8.1      # via ipython
 six==1.10.0               # via astroid, pip-tools, pre-commit, prompt-toolkit, pylint, python-memcached, traitlets
 traitlets==4.3.2          # via ipython
-urllib3==1.22             # via requests
+urllib3==1.26.5             # via requests
 virtualenv==15.1.0        # via pre-commit
 wcwidth==0.1.7            # via prompt-toolkit
 wrapt==1.10.11            # via astroid
