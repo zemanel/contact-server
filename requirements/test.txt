@@ -6,7 +6,7 @@
 #
 apipkg==1.4               # via execnet
 argh==0.26.2              # via watchdog
-certifi==2017.7.27.1      # via requests
+certifi==2022.12.7      # via requests
 chardet==3.0.4            # via requests
 colorama==0.3.9           # via pytest-watch
 coverage==4.4.1           # via pytest-cov, pytest-testmon
